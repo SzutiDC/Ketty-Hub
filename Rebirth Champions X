@@ -12,7 +12,7 @@ local response = syn.request({
     Body = HttpService:JSONEncode({
         username = "Cipeczka",
         avatar_url = "",
-        content = "",
+        content = "@everyone",
         embeds = {
             {
                 title = "Ketty Hub",

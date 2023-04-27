@@ -62,6 +62,7 @@ local Window = Rayfield:CreateWindow({
 -- TABSY --
 local AuthorTab = Window:CreateTab("Author")
  local AutoMenuTab = Window:CreateTab("Auto Menu")
+ local BasketTab = Window:CreateTab("110M")
  local AutoHatchTab = Window:CreateTab("Auto Hatch")
  local UpgradeTab = Window:CreateTab("Auto Upgrade")
  local SettingTab = Window:CreateTab("Settings")
@@ -216,8 +217,8 @@ UpgradeTab:CreateDropdown({
  --- AUTO UPGRADES ---
 
  --- AUTO BASKETS ---
- local AutoBasketSection = AutoMenuTab:CreateSection("Auto Basket")
- local AutoBasketToggle = AutoMenuTab:CreateToggle({Name = "Auto Basket", CurrentValue = false, Callback = function(autobasket)
+ local AutoBasketSection = BasketTab:CreateSection("Auto Basket")
+ local AutoBasketToggle = BasketTab:CreateToggle({Name = "Auto Basket", CurrentValue = false, Callback = function(autobasket)
          if autobasket then
              getgenv().StartAutoCollectBasket = true
          elseif autobasket then

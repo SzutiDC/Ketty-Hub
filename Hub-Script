@@ -1,9 +1,7 @@
-if game.placeId == 8540346411 then
-    print("Found Game Called: Rebirth Champions X")
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/SzutiDC/Ketty-Hub/main/Rebirth%20Champions%20X"))()
-elseif game.placeId == 11868251164 then
-    print("Found Game Called: SKYDIVE Off A TOWER")
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/SzutiDC/Ketty-Hub/main/SKYDIVE%20Off%20A%20TOWER"))()
-else
-    print('Game Not Supported')
+local HWIDTable =  loadstring(game:HttpGet("https://raw.githubusercontent.com/SzutiDC/Ketty-Hub/main/Whitelist%20HWID's"))()
+local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
+for i,v in pairs(HWIDTable) do
+    if v == HWID then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SzutiDC/Ketty-Hub/main/Hub-Script"))()
+    end
 end
